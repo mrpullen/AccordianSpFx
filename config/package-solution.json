@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "accordian-sp-fx-client-side-solution",
+    "id": "b612807c-a00c-499f-bd69-bd1fde1342a5",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/accordian-sp-fx.sppkg"
+  }
+}

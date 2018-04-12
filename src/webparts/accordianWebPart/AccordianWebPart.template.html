@@ -1,0 +1,96 @@
+<style type="text/css">
+    /* Accordion */
+    
+    .accordion {
+        line-height: normal;
+        display: flex;
+        flex-direction: column;
+        flex-flow: column;
+    }
+    
+    .accordion .accordion-item {
+        border-bottom: 1px solid #d2d2d2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .accordion-item-container.collapsed {
+        flex: 0;
+        display: flex;
+    }
+    
+    .accordion-item-container {
+        margin-bottom: 10px;
+        transition: flex 0.2s ease-out;
+        overflow: hidden;
+        flex: 1;
+    }
+    
+    .accordion .accordion-item-link {
+        position: relative;
+        display: block;
+        padding: 12px 0;
+    }
+    
+    .accordion .accordion-item-link:hover {
+        text-decoration: none;
+    }
+    
+    .accordion .accordion-item-link .accordion-item-title {
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 15px;
+    }
+    
+    .accordion {
+        line-height: normal;
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+        color: white;
+    }
+    
+    .panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1.2s ease-out;
+    }
+    
+    .panel.open {
+        max-height: 600px;
+        height: auto;
+        transition: max-height 2.2s ease-out;
+    }
+</style>
+<div data-bind="attr: {class:accordianWebPartClass}">
+    <div kdata-bind="attr: {class:containerClass}">
+        <div data-bind="attr: {class:rowClass}">
+            <div class="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
+
+
+
+                <!-- ko foreach: items -->
+                <div class="accordion">
+                    <a class="accordion-item-link" data-bind="href: Link, id: Id,click:$parent.selectItem">
+                        <span class="accordion-item-image"><i class="ms-Icon" data-bind="css: { 'ms-Icon--CirclePlus': (Id !== $parent.currentItem()), 'ms-Icon--ChromeClose': (Id === $parent.currentItem())}"></i></span>
+                        <span class="accordion-item-title" data-bind="text:Title"></span>
+                    </a>
+                </div>
+                <div class="panel" data-bind="html:Body, css: { 'open' : (Id === $parent.currentItem()) }">
+
+                </div>
+
+
+
+                <!-- /ko -->
+
+                <!--div data-bind="text:listId "></div-->
+            </div>
+        </div>
+    </div>
+</div>

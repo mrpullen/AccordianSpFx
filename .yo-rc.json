@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.1.0",
+    "libraryName": "accordian-sp-fx",
+    "libraryId": "b612807c-a00c-499f-bd69-bd1fde1342a5",
+    "environment": "spo"
+  }
+}
